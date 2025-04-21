@@ -1,10 +1,10 @@
-# date-simple <sup>[![Version Badge][2]][1]</sup>
+# date-add
 
 
 ## Example
 
 ```js
-const { addDays, addHours, endOfDay, yesterday } from "date-simple"
+const { addDays, addHours, endOfDay, yesterday } from "date-add"
 
 const tomorrow = addDays(new Date(), 1)
 const today = addDays(tomorrow, -1)
