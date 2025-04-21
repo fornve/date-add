@@ -4,7 +4,7 @@
 ## Example
 
 ```js
-const { addDays, addHours, endOfDay, yesterday } from "date-add"
+import { addDays, addHours, endOfDay, yesterday } from "date-add-days"
 
 const tomorrow = addDays(new Date(), 1)
 const today = addDays(tomorrow, -1)

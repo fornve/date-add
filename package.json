@@ -1,5 +1,5 @@
 {
-	"name": "date-add",
+	"name": "date-add-days",
 	"version": "1.0.0",
 	"author": "Marek Dajnowski",
 	"funding": {
@@ -18,7 +18,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/fornve/date-add.git"
+		"url": "git://github.com/fornve/date-add-days.git"
 	},
 	"keywords": [
 		"Date",
@@ -32,7 +32,7 @@
 		"yesterday"
 	],
 	"engines": {
-		"node": ">= 0.4"
+		"node": ">= 12.0.0"
 	},
 	"publishConfig": {
 		"ignore": [
