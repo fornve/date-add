@@ -1,15 +1,12 @@
 # date-add-days
 
-Dead simple date manipulation.
-
-# date-utils
-
-A lightweight TypeScript utility library for common date operations with zero dependencies.
+Dead simple date manipulation. A lightweight TypeScript utility library for 
+common date operations with zero dependencies.
 
 ## Installation
 
 ```bash
-npm install date-utils
+npm install date-add-days
 ```
 
 ## Usage
@@ -17,7 +14,7 @@ npm install date-utils
 Import the functions you need:
 
 ```typescript
-import { addDays, endOfDay, toIsoDate } from 'date-utils';
+import { addDays, endOfDay, toIsoDate } from 'date-add-days';
 
 // Add 5 days to current date
 const futureDate = addDays(new Date(), 5);
@@ -94,7 +91,7 @@ const timestamp = toUnixTimestamp(new Date());
 Working with upcoming events:
 
 ```typescript
-import { addDays, daysLeft, toIsoDate } from 'date-utils';
+import { addDays, daysLeft, toIsoDate } from 'date-add-days';
 
 const eventDate = addDays(new Date(), 14);
 console.log(`Event scheduled for: ${toIsoDate(eventDate)}`);
@@ -104,7 +101,7 @@ console.log(`${daysLeft(eventDate)} days remaining until the event`);
 Time-based calculations:
 
 ```typescript
-import { addHours, endOfDay, toUnixTimestamp } from 'date-utils';
+import { addHours, endOfDay, toUnixTimestamp } from 'date-add-days';
 
 const current = new Date();
 const meetingEnd = addHours(current, 1.5);
