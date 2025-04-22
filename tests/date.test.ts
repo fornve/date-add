@@ -1,4 +1,4 @@
-import { addDays, addHours, daysLeft, endOfDay, toIsoDate, toUnixTimestamp, yesterday } from '../date'
+import { addDays, addHours, addMinutes, addSeconds, daysLeft, endOfDay, toIsoDate, toUnixTimestamp, yesterday } from '../date'
 describe('date-simple', () => {
   it('addDays should be a function', () => {
     expect(addDays).toBeInstanceOf(Function)
@@ -23,6 +23,23 @@ describe('date-simple', () => {
     const newDate = addHours(date, 1)
     expect(newDate).toBeInstanceOf(Date)
     expect(newDate.getTime()).toBe(new Date("2025-01-01T01:00:00.000Z").getTime())
+  })
+  
+  it('should add seconds', () => {
+    const date = new Date("2025-01-01 00:00:00")
+    const checkTime = new Date("2025-01-01 00:01:20")
+    const newDate = addSeconds(date, 80)
+    expect(newDate).toBeInstanceOf(Date)
+    expect(newDate.getTime()).toBe(checkTime.getTime())
+  })
+  
+  it('should add minutes', () => {
+    const date = new Date("2025-01-01 00:00:00")
+    const checkTime = new Date("2025-01-01 00:12:00")
+    const newDate = addMinutes(date, 12)
+    expect(newDate).toBeInstanceOf(Date)
+    expect(newDate.toISOString()).toBe(checkTime.toISOString())
+    expect(newDate.getTime()).toBe(checkTime.getTime())
   })
 
   it('yesterday should return day - 1 date', () => {

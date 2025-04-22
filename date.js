@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.toUnixTimestamp = exports.toIsoDate = exports.yesterday = exports.daysLeft = exports.addHours = exports.endOfDay = exports.addDays = void 0;
+exports.toUnixTimestamp = exports.toIsoDate = exports.yesterday = exports.daysLeft = exports.addSeconds = exports.addMinutes = exports.addHours = exports.endOfDay = exports.addDays = void 0;
 /**
  * @param {Date object} date Date to add days to
  * @param {integer} days Number of days to be added
@@ -19,15 +19,32 @@ var endOfDay = function (day) {
 };
 exports.endOfDay = endOfDay;
 /**
- *
- * @param {Date object} date It would be wrapped in new Date()
- * @param {number} hours Number of hours (integer of loat) to be added to date
+ * @param {Date object} date
+ * @param {number} hours Number of hours (integer of float) to be added to date
  * @returns Date Object
  */
 var addHours = function (date, hours) {
-    return new Date((date.getTime() + (hours * 60 * 60 * 1000)));
+    return (0, exports.addSeconds)(date, hours * 60 * 60);
 };
 exports.addHours = addHours;
+/**
+ * @param {Date object} date
+ * @param {number} minutes Number of minutes (integer of float) to be added to date
+ * @returns Date Object
+ */
+var addMinutes = function (date, minutes) {
+    return (0, exports.addSeconds)(date, minutes * 60);
+};
+exports.addMinutes = addMinutes;
+/**
+ * @param {Date object} date
+ * @param {number} seconds Number of seconds (integer of float) to be added to date
+ * @returns Date Object
+ */
+var addSeconds = function (date, seconds) {
+    return new Date((date.getTime() + (seconds * 1000)));
+};
+exports.addSeconds = addSeconds;
 var daysLeft = function (date) {
     return Math.floor((date.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
 };

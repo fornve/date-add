@@ -16,15 +16,36 @@ export const endOfDay = (day: Date): Date => {
 }
 
 /**
- *
- * @param {Date object} date It would be wrapped in new Date()
- * @param {number} hours Number of hours (integer of loat) to be added to date
+ * @param {Date object} date
+ * @param {number} hours Number of hours (integer of float) to be added to date
  * @returns Date Object
  */
 export const addHours = (date: Date, hours: number): Date => {
-  return new Date((date.getTime() + (hours * 60 * 60 * 1000)))
+  return addSeconds(date, hours * 60 * 60)
 }
 
+/**
+ * @param {Date object} date 
+ * @param {number} minutes Number of minutes (integer of float) to be added to date
+ * @returns Date Object
+ */
+export const addMinutes = (date: Date, minutes: number): Date => {
+  return addSeconds(date, minutes * 60)
+}
+
+/**
+ * @param {Date object} date
+ * @param {number} seconds Number of seconds (integer of float) to be added to date
+ * @returns Date Object
+ */
+export const addSeconds = (date: Date, seconds: number): Date => {
+  return new Date((date.getTime() + (seconds * 1000)))
+}
+
+/**
+ * @param {Date object} date
+ * @returns Number of days left
+ */ 
 export const daysLeft = (date: Date): number => {
   return Math.floor((date.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))
 }

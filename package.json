@@ -1,6 +1,6 @@
 {
 	"name": "date-add-days",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Marek Dajnowski",
 	"funding": {
 		"url": "https://github.com/sponsors/fornve"
@@ -25,6 +25,8 @@
 		"ES6",
 		"addDays",
 		"addHours",
+		"addMinutes",
+		"addSeconds",
 		"daysLeft",
 		"endOfDay",
 		"toIsoDate",
